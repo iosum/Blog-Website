@@ -15,12 +15,27 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+app.get("/", function(req, res) {
+    res.render("home", {
+        StartingContent:
+        homeStartingContent
+    });
+});
 
 
+app.get("/about", function(req, res) {
+    res.render("about", {
+        AboutContent:
+        aboutContent
+    });
+});
 
-
-
-
+app.get("/contact",function (req, res) {
+    res.render("contact", {
+        ContactContent:
+        contactContent
+    });
+});
 
 
 
